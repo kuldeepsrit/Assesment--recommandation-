@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SHL Assessment Results</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background: linear-gradient(135deg, #fbc2eb 0%, #fcd3a1 100%);
+      animation: fadeIn 1.5s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+    }
+
+    .shine-text {
+      background: linear-gradient(to right, #ff758c, #ff7eb3, #ffb347);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex items-center justify-center px-4">
+
+  <div class="glass-card rounded-3xl p-10 w-full max-w-3xl text-center space-y-6">
+    <h1 class="text-3xl md:text-4xl shine-text">Your SHL Recommendations</h1>
+
+    {% if recommendations %}
+      <p class="text-lg text-gray-800">For <strong>{{ job_title.title() }}</strong> at <strong>{{ level.title() }}</strong> level, we recommend the following assessment(s):</p>
+      <ul class="mt-4 space-y-2 text-left list-disc list-inside text-gray-700">
+        {% for rec in recommendations %}
+          <li class="font-medium">{{ rec }}</li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p class="text-red-600 text-lg font-semibold">No recommendations found for "{{ job_title }}" at level "{{ level }}".</p>
+    {% endif %}
+
+    <div class="mt-8 p-6 rounded-xl bg-white bg-opacity-80 shadow-inner text-left">
+      <h2 class="text-xl font-bold text-pink-600 mb-4">Important Notes Before Taking Assessments:</h2>
+      <ul class="list-disc list-inside text-gray-700 space-y-2">
+        <li>Your network connection is stable.</li>
+        <li>Ensure your device is fully charged and updated.</li>
+        <li>Cheating or third-party help is strictly prohibited.</li>
+        <li>Find a quiet, distraction-free environment.</li>
+        <li>Keep required documents (if any) handy.</li>
+        <li>Read each question carefully before answering.</li>
+        <li>Manage your time wisely — don’t rush.</li>
+      </ul>
+    </div>
+
+    <a href="/search" class="inline-block mt-6 bg-pink-500 hover:bg-pink-600 text-white py-3 px-6 rounded-full text-lg transition transform hover:scale-105 shadow-md">
+      Back to Search
+    </a>
+  </div>
+  <!-- Chatbot Widget -->
+<div id="chatbot" class="fixed bottom-6 right-6 w-80 bg-white shadow-xl rounded-2xl border border-pink-300 overflow-hidden hidden z-50">
+  <div class="bg-gradient-to-r from-pink-200 to-orange-300 p-3 font-semibold text-gray-700">AI Chatbot</div>
+  <div id="chat-log" class="p-4 h-60 overflow-y-auto text-sm space-y-2 text-gray-700"></div>
+  <div class="flex border-t">
+    <input type="text" id="chat-input" placeholder="Ask me..." class="flex-1 p-2 text-sm focus:outline-none"/>
+    <button onclick="sendChat()" class="bg-pink-400 hover:bg-pink-500 px-3 text-white">Send</button>
+  </div>
+</div>
+
+<!-- Chat Toggle Button -->
+<button onclick="toggleChat()" class="fixed bottom-6 right-6 bg-gradient-to-r from-pink-400 to-orange-400 hover:from-pink-500 hover:to-orange-500 text-white p-3 rounded-full shadow-xl z-50">
+  💬
+</button>
+
+<script>
+  const toggleChat = () => {
+    const bot = document.getElementById('chatbot');
+    bot.classList.toggle('hidden');
+  };
+
+  const sendChat = () => {
+    const input = document.getElementById('chat-input');
+    const chatLog = document.getElementById('chat-log');
+    const msg = input.value.trim();
+    if (!msg) return;
+
+    const userDiv = document.createElement('div');
+    userDiv.innerHTML = `<strong>You:</strong> ${msg}`;
+    chatLog.appendChild(userDiv);
+
+    const responseDiv = document.createElement('div');
+    responseDiv.innerHTML = `<strong>Bot:</strong> ${getBotResponse(msg)}`;
+    chatLog.appendChild(responseDiv);
+
+    chatLog.scrollTop = chatLog.scrollHeight;
+    input.value = '';
+  };
+
+  const getBotResponse = (msg) => {
+    msg = msg.toLowerCase();
+
+    if (msg.includes("hello") || msg.includes("hi")) {
+      return "Hi! I'm your assistant for SHL Assessments. 😊";
+    } else if (msg.includes("recommend") || msg.includes("assessment")) {
+      return "To get recommendations, just enter your job title and level on the form.";
+    } else if (msg.includes("team lead") || msg.includes("leadership")) {
+      return "Leadership Assessment is ideal for Team Leads.";
+    } else if (msg.includes("shl")) {
+      return "SHL is a platform that helps evaluate candidate abilities through assessments.";
+    } else if (msg.includes("cheating")) {
+      return "Cheating is not allowed to ensure fairness. Stay honest! 💯";
+    } else if (msg.includes("device") || msg.includes("network")) {
+      return "For best experience, use a modern browser on a stable connection.";
+    } 
+    else if (msg.includes("what is ai")) {
+      return "AI stands for Artificial Intelligence. It enables machines to simulate human thinking and behavior.";
+    } else if (msg.includes("effect of ai")) {
+      return "AI improves efficiency, accuracy, and innovation, but also comes with ethical challenges.";
+    } else if (msg.includes("is ai important")) {
+      return "Yes! AI is transforming industries like healthcare, education, and business.";
+    }
+    
+    else {
+      return "I'm still learning. Try asking something else!";
+    }
+  };
+</script>
+
+
+</body>
+</html>

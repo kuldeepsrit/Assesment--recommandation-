@@ -1,0 +1,102 @@
+[
+  {
+    "name": "Cognitive Ability Test",
+    "roles": ["software engineer", "data analyst", "developer", "qa engineer"],
+    "levels": ["entry", "mid", "senior"]
+  },
+  {
+    "name": "Personality Questionnaire",
+    "roles": ["hr specialist", "team lead", "project manager", "sales associate"],
+    "levels": ["entry", "mid", "senior"]
+  },
+  {
+    "name": "Situational Judgment Test",
+    "roles": ["customer service representative", "sales associate", "business analyst"],
+    "levels": ["entry", "mid"]
+  },
+  {
+    "name": "Leadership Assessment",
+    "roles": ["team lead", "project manager", "product manager"],
+    "levels": ["mid", "senior"]
+  },
+  {
+    "name": "Technical Skills Test",
+    "roles": ["software engineer", "developer", "qa engineer"],
+    "levels": ["entry", "mid", "senior"]
+  },
+  {
+    "name": "Numerical Reasoning Test",
+    "roles": ["financial analyst", "accountant", "data analyst"],
+    "levels": ["entry", "mid", "senior"]
+  },
+  {
+    "name": "Verbal Reasoning Test",
+    "roles": ["content writer", "editor", "communications specialist"],
+    "levels": ["entry", "mid"]
+  },
+  {
+    "name": "Executive Assessment",
+    "roles": ["cto", "ceo", "director", "vp"],
+    "levels": ["senior"]
+  },
+  {
+    "name": "Customer Orientation Test",
+    "roles": ["customer service representative", "support agent", "client success manager"],
+    "levels": ["entry", "mid"]
+  },
+  {
+    "name": "Problem Solving Assessment",
+    "roles": ["business analyst", "product manager", "software engineer"],
+    "levels": ["mid", "senior"]
+  },
+  {
+    "name": "Data Interpretation Test",
+    "roles": ["data analyst", "business analyst", "financial analyst"],
+    "levels": ["entry", "mid"]
+  },
+  {
+    "name": "Project Management Assessment",
+    "roles": ["project manager", "scrum master", "product manager"],
+    "levels": ["mid", "senior"]
+  },
+  {
+    "name": "Email Etiquette Assessment",
+    "roles": ["support agent", "customer service representative", "executive assistant"],
+    "levels": ["entry", "mid"]
+  },
+  {
+    "name": "Attention to Detail Test",
+    "roles": ["qa engineer", "data entry clerk", "editor"],
+    "levels": ["entry", "mid"]
+  },
+  {
+    "name": "Workplace Behavior Assessment",
+    "roles": ["hr specialist", "operations manager", "team lead"],
+    "levels": ["mid", "senior"]
+  },
+  {
+    "name": "Conflict Management Test",
+    "roles": ["hr specialist", "team lead", "operations manager"],
+    "levels": ["mid", "senior"]
+  },
+  {
+    "name": "Sales Potential Assessment",
+    "roles": ["sales associate", "account executive", "business development manager"],
+    "levels": ["entry", "mid", "senior"]
+  },
+  {
+    "name": "Organizational Skills Assessment",
+    "roles": ["executive assistant", "project coordinator", "hr specialist"],
+    "levels": ["entry", "mid"]
+  },
+  {
+    "name": "Innovation & Creativity Test",
+    "roles": ["product designer", "ux researcher", "marketing strategist"],
+    "levels": ["mid", "senior"]
+  },
+  {
+    "name": "Remote Work Readiness Assessment",
+    "roles": ["software engineer", "data analyst", "remote support agent"],
+    "levels": ["entry", "mid", "senior"]
+  }
+]

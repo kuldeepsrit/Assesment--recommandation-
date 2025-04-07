@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome | SHL Recommender</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #fbc2eb 0%, #fcd3a1 100%);
+      animation: fadeIn 1.5s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+    }
+
+    .shine-text {
+      background: linear-gradient(to right, #ff758c, #ff7eb3, #ffb347);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex items-center justify-center px-4">
+
+  <div class="glass-card rounded-3xl p-10 max-w-2xl text-center">
+    <h1 class="text-4xl md:text-5xl shine-text mb-6">Welcome to SHL Recommender</h1>
+    <p class="text-gray-700 text-lg mb-8">Discover the best SHL assessments tailored to your job title and level. Let’s find what fits you best.</p>
+    <a href="/search">
+      <button class="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-3 px-6 rounded-full text-lg transition transform hover:scale-105 shadow-md">
+        Get Started
+      </button>
+    </a>
+  </div>
+
+</body>
+</html>
